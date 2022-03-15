@@ -1,0 +1,82 @@
+* {
+    margin: 0px;
+}
+
+table {
+    margin: 0px auto;
+}
+
+body {
+    background-color: #EDEFF4;
+}
+
+h1 {
+    color: white;
+}
+
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    text-align: center;
+    padding: 0.6em;
+}
+
+#tabla_alta {
+    margin: 0.6em auto;
+    border-collapse: collapse;
+}
+
+#tabla_alta input {
+    margin: 0.2em;
+    padding: 0.3em;
+}
+
+.rojo {
+    color: red;
+}
+
+p {
+    margin: 0.6em;
+}
+
+#principal {
+    width: 800px;
+    margin: 0px auto;
+    border: 0px;
+    color: black;
+}
+
+#enlaces {
+    float: left;
+    margin-top: 1em;
+}
+
+#eslogan {
+    float: right;
+}
+
+#principal header {
+    background-color: #FF9933;
+}
+
+#principal #enlaces a:hover {
+    color: red;
+}
+
+#principal #enlaces a {
+    margin: 0.6em;
+    color: white;
+}
+
+#contenido {
+    padding: 1em;
+}
+
+.table td {
+    padding: 5px;
+    border: 1px solid #000;
+}
