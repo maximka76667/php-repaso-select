@@ -20,16 +20,8 @@
         <h1><a href="inicio.php">El mejor software</a></h1>
       </div>
       <div style="clear:both;text-align:right">Programa más descargado:
-        <?php
-        $connection = mysqli_connect('localhost', 'root', 'root', 'repaso_select') or die("Connection error: " . mysqli_connect_error());
-
-        $descargasQuery = "SELECT `nombre` FROM `programas` ORDER BY `descargas` DESC LIMIT 1" or die("Query error: " . mysqli_error($connection));
-
-        echo mysqli_fetch_array(
-          mysqli_query($connection, $descargasQuery)
-        )[0];
-
-        ?></div>
+        <?php include('./descarga.php') ?>
+      </div>
     </header>
 
     <div id="contenido">
@@ -42,25 +34,14 @@
         <td>Version</td>
         <td>Description</td>
       </tr>
-      <?php
-      $connection = mysqli_connect('localhost', 'root', 'root', 'repaso_select') or die("Connection error: " . mysqli_connect_error());
-
-      $programasQuery = "
-	SELECT `nombre`, `version`, `descripcion` 
-	FROM `programas` 
-	ORDER BY `puntuacion` DESC, `votos` DESC
-	" or die("Query error: " . mysqli_error($connection));
-
-      $result = mysqli_query($connection, $programasQuery);
-
-      while ($row = mysqli_fetch_array($result)) {
-        echo "<tr>";
-        echo "<td>" . $row['nombre'] . "</td>";
-        echo "<td>" . $row['version'] . "</td>";
-        echo "<td>" . $row['descripcion'] . "</td>";
-        echo "</tr>";
-      }
-      ?>
+      <tr>
+        <td colspan="3">
+          <form>
+            <input type="text" name="desc_buscar">
+          </form>
+        </td>
+      </tr>
+      <?php include('./buscar.php') ?>
     </table>
 
   </div>
